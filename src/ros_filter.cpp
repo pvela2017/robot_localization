@@ -1790,8 +1790,7 @@ void RosFilter<T>::loadParams()
       stamped_control_sub_ = this->create_subscription<geometry_msgs::msg::TwistStamped>(
         "cmd_vel", rclcpp::QoS(1),
         std::bind(&RosFilter<T>::controlStampedCallback, this, std::placeholders::_1));
-    }
-    else {
+    } else {
       control_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
         "cmd_vel", rclcpp::QoS(1),
         std::bind(&RosFilter<T>::controlCallback, this, std::placeholders::_1));
