@@ -30,12 +30,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <robot_localization/filter_common.hpp>
-#include <robot_localization/filter_utilities.hpp>
-
 #include <iomanip>
 #include <string>
 #include <vector>
+
+#include <robot_localization/filter_common.hpp>
+#include <robot_localization/filter_utilities.hpp>
 
 std::ostream & operator<<(std::ostream & os, const Eigen::MatrixXd & mat)
 {

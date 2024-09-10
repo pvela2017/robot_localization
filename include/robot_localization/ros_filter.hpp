@@ -33,6 +33,21 @@
 #ifndef ROBOT_LOCALIZATION__ROS_FILTER_HPP_
 #define ROBOT_LOCALIZATION__ROS_FILTER_HPP_
 
+#include <Eigen/Dense>
+
+#include <tf2/LinearMath/Transform.h>
+#include <tf2_ros/transform_broadcaster.h>
+#include <tf2_ros/transform_listener.h>
+
+#include <deque>
+#include <fstream>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <string>
+#include <memory>
+#include <vector>
+
 #include <robot_localization/srv/set_pose.hpp>
 #include <robot_localization/srv/toggle_filter_processing.hpp>
 
@@ -47,26 +62,12 @@
 #include <sensor_msgs/msg/imu.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <std_srvs/srv/empty.hpp>
-#include <tf2/LinearMath/Transform.h>
-#include <tf2_ros/transform_broadcaster.h>
-#include <tf2_ros/transform_listener.h>
 #include <diagnostic_msgs/msg/diagnostic_status.hpp>
 #include <diagnostic_updater/diagnostic_updater.hpp>
 #include <diagnostic_updater/publisher.hpp>
 #include <robot_localization/filter_base.hpp>
 #include <robot_localization/filter_common.hpp>
 #include <robot_localization/ros_filter_utilities.hpp>
-
-#include <Eigen/Dense>
-
-#include <deque>
-#include <fstream>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <string>
-#include <memory>
-#include <vector>
 
 namespace robot_localization
 {
