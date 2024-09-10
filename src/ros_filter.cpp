@@ -1208,7 +1208,7 @@ void RosFilter<T>::loadParams()
         "Subscribed to " <<
           odom_topic << " (" << odom_topic_name << ")\n\t" <<
           odom_topic_name << "_differential is " <<
-        (differential ? "true" : "false") << "\n\t" << odom_topic_name <<
+          (differential ? "true" : "false") << "\n\t" << odom_topic_name <<
           "_pose_rejection_threshold is " << pose_mahalanobis_thresh <<
           "\n\t" << odom_topic_name << "_twist_rejection_threshold is " <<
           twist_mahalanobis_thresh << "\n\t" << odom_topic_name <<
@@ -1328,7 +1328,7 @@ void RosFilter<T>::loadParams()
         "Subscribed to " <<
           pose_topic << " (" << pose_topic_name << ")\n\t" <<
           pose_topic_name << "_differential is " <<
-        (differential ? "true" : "false") << "\n\t" << pose_topic_name <<
+          (differential ? "true" : "false") << "\n\t" << pose_topic_name <<
           "_rejection_threshold is " << pose_mahalanobis_thresh <<
           "\n\t" << pose_topic_name << " update vector is " <<
           pose_update_vec);
@@ -1634,14 +1634,14 @@ void RosFilter<T>::loadParams()
         "Subscribed to " <<
           imu_topic << " (" << imu_topic_name << ")\n\t" <<
           imu_topic_name << "_differential is " <<
-        (differential ? "true" : "false") << "\n\t" << imu_topic_name <<
+          (differential ? "true" : "false") << "\n\t" << imu_topic_name <<
           "_pose_rejection_threshold is " << pose_mahalanobis_thresh <<
           "\n\t" << imu_topic_name << "_twist_rejection_threshold is " <<
           twist_mahalanobis_thresh << "\n\t" << imu_topic_name <<
           "_linear_acceleration_rejection_threshold is " <<
           accel_mahalanobis_thresh << "\n\t" << imu_topic_name <<
           "_remove_gravitational_acceleration is " <<
-        (remove_grav_acc ? "true" : "false") << "\n\t" <<
+          (remove_grav_acc ? "true" : "false") << "\n\t" <<
           imu_topic_name << " pose update vector is " << pose_update_vec <<
           "\t" << imu_topic_name << " twist update vector is " <<
           twist_update_vec << "\t" << imu_topic_name <<
@@ -1674,7 +1674,7 @@ void RosFilter<T>::loadParams()
       deceleration_gains);
 
     // Select between TwistStamped or Twist control input
-    if(stamped_control_) {
+    if (stamped_control_) {
       stamped_control_sub_ = this->create_subscription<geometry_msgs::msg::TwistStamped>(
         "cmd_vel", rclcpp::QoS(1),
         std::bind(&RosFilter<T>::controlStampedCallback, this, std::placeholders::_1));
