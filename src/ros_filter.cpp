@@ -1786,7 +1786,7 @@ void RosFilter<T>::loadParams()
       deceleration_gains);
 
     // Select between TwistStamped or Twist control input
-    if(stamped_control_) {
+    if (stamped_control_) {
       stamped_control_sub_ = this->create_subscription<geometry_msgs::msg::TwistStamped>(
         "cmd_vel", rclcpp::QoS(1),
         std::bind(&RosFilter<T>::controlStampedCallback, this, std::placeholders::_1));
